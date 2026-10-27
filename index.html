@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лискаво · женское здоровье и интимный фитнес в Якутске</title>
+<meta name="description" content="Лискаво: групповые занятия «Женское здоровье» и «Интимный фитнес» в Якутске. Движение, дыхание и внимательное отношение к себе. Ведущая Виктория.">
+<meta name="theme-color" content="#f6f1e9">
+<meta name="robots" content="noindex, nofollow"><!-- черновик: убрать перед запуском -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* palette: linen ground, olive ink from the logo, sage wall, candle glow, rose from the heart */
+  --linen: oklch(96.6% 0.012 80);
+  --linen-2: oklch(93.4% 0.02 76);
+  --sand: oklch(87% 0.032 72);
+  --ink: oklch(30% 0.03 116);
+  --ink-soft: oklch(44% 0.026 112);
+  --olive: oklch(45% 0.052 118);
+  --sage: oklch(80% 0.038 128);
+  --sage-deep: oklch(66% 0.045 132);
+  --night: oklch(27.5% 0.03 118);
+  --night-2: oklch(33% 0.035 118);
+  --on-night: oklch(93% 0.02 80);
+  --on-night-soft: oklch(80% 0.025 85);
+  --glow: oklch(82% 0.085 72);
+  --rose: oklch(72% 0.085 14);
+  --rose-ink: oklch(52% 0.11 16);
+
+  --font-display: "Forum", "Times New Roman", serif;
+  --font-body: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  --font-hand: "Marck Script", cursive;
+
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem);
+  --text-xl: clamp(1.9rem, 1.4rem + 2vw, 3rem);
+  --text-2xl: clamp(2.5rem, 1.6rem + 3.6vw, 4.6rem);
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: clamp(3.5rem, 2rem + 6vw, 7.5rem);
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3rem);
+  --wrap: 75rem;
+
+  --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --radius-arch: 999px 999px 1.25rem 1.25rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--linen);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  font-kerning: normal;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; text-wrap: pretty; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--wrap)); margin-inline: auto; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--rose-ink); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  min-height: 3.25rem; padding: 0.8rem 1.6rem;
+  border-radius: 999px; border: 1px solid transparent;
+  font: 500 1rem/1.2 var(--font-body); text-decoration: none; cursor: pointer;
+  transition: background-color .3s var(--ease-out), color .3s var(--ease-out), transform .3s var(--ease-out), border-color .3s var(--ease-out);
+}
+.btn svg { width: 1.2em; height: 1.2em; flex: none; }
+.btn--primary { background: var(--olive); color: var(--linen); }
+.btn--primary:hover { background: var(--ink); transform: translateY(-2px); }
+.btn--ghost { border-color: color-mix(in oklch, var(--olive) 45%, transparent); color: var(--olive); }
+.btn--ghost:hover { background: var(--linen-2); border-color: var(--olive); }
+.btn--glow { background: var(--glow); color: var(--night); }
+.btn--glow:hover { background: var(--on-night); transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in oklch, var(--linen) 92%, transparent);
+  backdrop-filter: saturate(1.2) blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease-out);
+}
+.site-header.is-scrolled { border-bottom-color: color-mix(in oklch, var(--sand) 70%, transparent); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); min-height: 4.25rem; }
+.brand img { height: 2.9rem; width: auto; }
+.nav { display: flex; gap: clamp(1rem, 2vw, 2rem); }
+.nav a { text-decoration: none; color: var(--ink-soft); font-size: 0.95rem; padding-block: 0.6rem; position: relative; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.35rem; height: 1px; background: var(--rose); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease-out); }
+.nav a:hover { color: var(--ink); }
+.nav a:hover::after { transform: scaleX(1); }
+.header-cta { min-height: 2.75rem; padding: 0.55rem 1.15rem; font-size: 0.95rem; }
+@media (max-width: 860px) { .nav { display: none; } }
+@media (max-width: 420px) { .header-cta .label-long { display: none; } }
+
+/* ---------- hero ---------- */
+.hero { padding-block: clamp(2rem, 1rem + 4vw, 4.5rem) var(--space-xl); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.hero-kicker { font-family: var(--font-hand); font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); color: var(--rose-ink); line-height: 1.2; margin-bottom: var(--space-sm); }
+.hero h1 { font-size: var(--text-2xl); color: var(--ink); }
+.hero-lead { margin-top: var(--space-md); font-size: var(--text-lg); line-height: 1.5; color: var(--ink-soft); max-width: 34ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
+.hero-meta { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-size: var(--text-sm); color: var(--ink-soft); }
+.hero-meta span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.hero-meta span::before { content: ""; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--rose); }
+.hero-visual { position: relative; }
+.arch { border-radius: var(--radius-arch); overflow: hidden; background: var(--linen-2); }
+.hero-visual .arch { aspect-ratio: 4 / 5; box-shadow: 0 2.5rem 4rem -2.5rem oklch(35% 0.05 70 / 0.45); }
+.hero-visual .arch img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%; }
+.hero-note {
+  position: absolute; left: clamp(-3rem, -4vw, -1rem); bottom: 12%;
+  background: var(--linen); padding: 1rem 1.25rem; border-radius: 1rem;
+  max-width: 15rem; font-size: var(--text-sm); line-height: 1.45; color: var(--ink-soft);
+  box-shadow: 0 1rem 2.5rem -1.25rem oklch(30% 0.04 80 / 0.35);
+}
+.hero-note strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; color: var(--ink); line-height: 1.15; margin-bottom: 0.2rem; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 30rem; width: 100%; justify-self: center; }
+  .hero-note { left: -0.25rem; }
+}
+
+/* ---------- permission list ---------- */
+.permission { padding-block: var(--space-xl); border-top: 1px solid var(--sand); }
+.permission .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 6vw, 6rem); }
+.permission h2 { font-size: var(--text-xl); }
+.permission-intro { margin-top: var(--space-md); color: var(--ink-soft); max-width: 40ch; }
+.permission-intro + .permission-intro { margin-top: var(--space-sm); }
+.nots { list-style: none; margin: 0; padding: 0; font-family: var(--font-display); font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2.2rem); line-height: 1.2; }
+.nots li { padding-block: 0.8rem; border-bottom: 1px solid var(--sand); color: var(--ink-soft); display: flex; gap: 0.9rem; align-items: baseline; }
+.nots li::before { content: "не"; font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 0.08em; color: var(--rose-ink); flex: none; width: 3.6rem; }
+.nots li.yes { color: var(--olive); border-bottom: none; padding-top: 1.4rem; }
+.nots li.yes::before { content: "можно"; }
+@media (max-width: 860px) { .permission .wrap { grid-template-columns: 1fr; } }
+
+/* ---------- about ---------- */
+.about { padding-block: var(--space-xl); background: var(--linen-2); }
+.about .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.about-photo { position: sticky; top: 6rem; }
+.about-photo .arch { aspect-ratio: 3 / 4; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.about-photo figcaption { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--ink-soft); text-align: center; }
+.eyebrow { font-size: var(--text-sm); letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-ink); margin-bottom: var(--space-sm); }
+.about h2 { font-size: var(--text-2xl); }
+.about-since { font-family: var(--font-display); font-size: var(--text-lg); color: var(--olive); margin-top: var(--space-xs); }
+.prose { margin-top: var(--space-lg); display: grid; gap: 1rem; max-width: 62ch; color: var(--ink-soft); }
+.prose p:first-child { color: var(--ink); font-size: var(--text-lg); line-height: 1.5; }
+.pull {
+  margin: var(--space-lg) 0 0; padding: var(--space-lg) 0 0; border-top: 1px solid var(--sand);
+  font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.15; color: var(--ink); max-width: 22ch;
+}
+.pull em { font-style: normal; color: var(--rose-ink); }
+@media (max-width: 860px) {
+  .about .wrap { grid-template-columns: 1fr; }
+  .about-photo { position: static; max-width: 22rem; }
+}
+
+/* ---------- directions (sage drench) ---------- */
+.directions { background: var(--sage); padding-block: var(--space-xl); }
+.directions-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.directions-head h2 { font-size: var(--text-2xl); max-width: 14ch; }
+.directions-head p { max-width: 38ch; color: oklch(30% 0.035 120); }
+.direction { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.direction + .direction { margin-top: var(--space-xl); }
+.direction--flip { grid-template-columns: 1.15fr 0.85fr; }
+.direction--flip .direction-media { order: 2; }
+.direction-media .arch { aspect-ratio: 4 / 5; background: var(--sage-deep); }
+.direction-media img { width: 100%; height: 100%; object-fit: cover; }
+.direction-num { font-family: var(--font-display); font-size: 1.1rem; color: oklch(38% 0.05 125); }
+.direction h3 { font-size: var(--text-xl); margin-top: 0.3rem; }
+.direction-lead { margin-top: var(--space-sm); font-size: var(--text-lg); line-height: 1.45; color: oklch(30% 0.035 120); max-width: 34ch; }
+.direction-text { margin-top: var(--space-md); max-width: 58ch; color: oklch(28% 0.03 118); }
+.leaf-list { list-style: none; margin: var(--space-md) 0 0; padding: 0; display: grid; gap: 0.85rem; max-width: 58ch; }
+.leaf-list li { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0.75rem; color: oklch(28% 0.03 118); }
+.leaf-list svg { width: 1.2rem; height: 1.2rem; margin-top: 0.2rem; color: var(--olive); }
+.leaf-list b { font-weight: 600; color: var(--ink); }
+.care-note {
+  margin-top: var(--space-md); padding: 1rem 1.2rem; max-width: 58ch;
+  background: color-mix(in oklch, var(--linen) 55%, transparent); border-radius: 1rem;
+  font-size: var(--text-sm); line-height: 1.55; color: oklch(30% 0.03 118);
+}
+.direction-quote { margin-top: var(--space-md); font-family: var(--font-hand); font-size: 1.55rem; line-height: 1.3; color: var(--rose-ink); max-width: 30ch; }
+@media (max-width: 860px) {
+  .direction, .direction--flip { grid-template-columns: 1fr; }
+  .direction--flip .direction-media { order: 0; }
+  .direction-media { max-width: 26rem; }
+}
+
+/* ---------- schedule & prices (night) ---------- */
+.night { background: var(--night); color: var(--on-night); padding-block: var(--space-xl); position: relative; overflow: hidden; }
+.night::before {
+  content: ""; position: absolute; inset: auto -10% -40% auto; width: 60vmax; height: 60vmax; border-radius: 50%;
+  background: radial-gradient(closest-side, oklch(70% 0.09 70 / 0.18), transparent); pointer-events: none;
+}
+.night .wrap { position: relative; }
+.night h2 { font-size: var(--text-2xl); }
+.night-lead { margin-top: var(--space-md); max-width: 46ch; color: var(--on-night-soft); line-height: 1.7; }
+.week { list-style: none; margin: var(--space-lg) 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); border-top: 1px solid oklch(100% 0 0 / 0.12); }
+.week li { padding: 1rem 0.75rem 1.25rem; border-right: 1px solid oklch(100% 0 0 / 0.08); min-height: 9.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.week li:last-child { border-right: none; }
+.week .day { font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-night-soft); opacity: 0.6; }
+.week .has { background: var(--night-2); }
+.week .has .day { opacity: 1; color: var(--glow); }
+.week .cls { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.15; }
+.week .time { font-size: var(--text-sm); color: var(--on-night-soft); font-variant-numeric: tabular-nums; margin-top: auto; }
+.week .tbd .cls { font-family: var(--font-body); font-size: var(--text-sm); color: var(--on-night-soft); }
+@media (max-width: 760px) {
+  .week { grid-template-columns: 1fr; border-top: none; gap: 0.5rem; }
+  .week li { min-height: 0; border: none; border-radius: 1rem; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 0.25rem 1rem; padding: 1rem 1.2rem; }
+  .week li:not(.has):not(.tbd) { display: none; }
+  .week .day { width: 2.5rem; }
+  .week .time { margin-top: 0; margin-left: auto; }
+  .week .tbd { background: oklch(100% 0 0 / 0.04); }
+}
+.place { margin-top: var(--space-md); display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; font-size: var(--text-sm); color: var(--on-night-soft); }
+.place a { color: var(--glow); text-underline-offset: 3px; }
+
+.prices { margin-top: var(--space-xl); display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 6rem); }
+.prices h3 { font-size: var(--text-xl); }
+.prices-intro { margin-top: var(--space-sm); color: var(--on-night-soft); max-width: 32ch; }
+.price-list { list-style: none; margin: 0; padding: 0; }
+.price-list li { display: grid; grid-template-columns: 1fr auto; gap: 0.35rem 2rem; padding-block: 1.4rem; border-bottom: 1px solid oklch(100% 0 0 / 0.12); }
+.price-list li:first-child { padding-top: 0; }
+.price-name { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.15; }
+.price-value { font-family: var(--font-display); font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem); line-height: 1; color: var(--glow); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.price-desc { grid-column: 1 / -1; color: var(--on-night-soft); font-size: 0.98rem; max-width: 52ch; }
+.price-desc small { display: block; margin-top: 0.25rem; font-size: var(--text-sm); opacity: 0.8; }
+.prices-cta { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); }
+.prices-cta p { font-size: var(--text-sm); color: var(--on-night-soft); max-width: 36ch; }
+@media (max-width: 860px) { .prices { grid-template-columns: 1fr; } }
+
+/* ---------- reviews ---------- */
+.reviews { padding-block: var(--space-xl); }
+.reviews-head { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 6vw, 6rem); align-items: end; }
+.reviews h2 { font-size: var(--text-xl); }
+.reviews-head p { color: var(--ink-soft); max-width: 52ch; }
+.sample-note { display: inline-block; margin-top: var(--space-lg); padding: 0.3rem 0.85rem; border-radius: 999px; border: 1px dashed var(--rose); color: var(--rose-ink); font-size: var(--text-sm); }
+.quotes { margin-top: var(--space-md); display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-md); align-items: start; }
+.quote { margin: 0; padding: var(--space-md); border-radius: 1.25rem; background: var(--linen-2); }
+.quote:nth-child(2) { margin-top: var(--space-lg); background: color-mix(in oklch, var(--sage) 45%, var(--linen)); }
+.quote:nth-child(3) { margin-top: calc(var(--space-lg) * 0.4); }
+.quote blockquote { margin: 0; font-size: 1.02rem; line-height: 1.6; }
+.quote:first-child blockquote { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.3; }
+.quote figcaption { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--ink-soft); }
+.quote figcaption::before { content: "♡ "; color: var(--rose); }
+@media (max-width: 860px) {
+  .reviews-head, .quotes { grid-template-columns: 1fr; }
+  .quote:nth-child(n) { margin-top: 0; }
+}
+
+/* ---------- faq ---------- */
+.faq { padding-block: var(--space-xl); background: var(--linen-2); }
+.faq .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 6rem); }
+.faq h2 { font-size: var(--text-2xl); }
+.faq-aside p { margin-top: var(--space-md); color: var(--ink-soft); max-width: 32ch; }
+.faq-aside .btn { margin-top: var(--space-md); }
+.faq-group + .faq-group { margin-top: var(--space-lg); }
+.faq-group h3 { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-ink); margin-bottom: var(--space-xs); }
+details { border-bottom: 1px solid var(--sand); }
+summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding-block: 1.15rem; font-size: 1.1rem; font-weight: 500; line-height: 1.4;
+}
+summary::-webkit-details-marker { display: none; }
+summary .plus { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--sand); position: relative; transition: background-color .3s var(--ease-out), transform .4s var(--ease-out); }
+summary .plus::before, summary .plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0.75rem; height: 1.5px; background: var(--olive); translate: -50% -50%; }
+summary .plus::after { rotate: 90deg; transition: rotate .4s var(--ease-out); }
+summary:hover .plus { background: var(--linen); }
+details[open] summary .plus { transform: rotate(180deg); }
+details[open] summary .plus::after { rotate: 0deg; }
+.answer { padding: 0 3rem 1.4rem 0; color: var(--ink-soft); display: grid; gap: 0.6rem; max-width: 62ch; }
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  details::details-content { height: 0; overflow: clip; transition: height .45s var(--ease-out), content-visibility .45s allow-discrete; }
+  details[open]::details-content { height: auto; }
+}
+@media (max-width: 860px) { .faq .wrap { grid-template-columns: 1fr; } .answer { padding-right: 0; } }
+
+/* ---------- contact ---------- */
+.contact { padding-block: var(--space-xl); }
+.contact .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.contact h2 { font-size: var(--text-2xl); }
+.contact-text { margin-top: var(--space-md); display: grid; gap: 0.75rem; color: var(--ink-soft); max-width: 46ch; }
+.contact-actions { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.contact-address { margin-top: var(--space-lg); font-family: var(--font-display); font-size: var(--text-lg); }
+.contact-address a { color: var(--olive); text-underline-offset: 4px; font-family: var(--font-body); font-size: var(--text-sm); margin-left: 0.5rem; }
+.contact-media .arch { aspect-ratio: 4 / 5; }
+.contact-media img { width: 100%; height: 100%; object-fit: cover; object-position: 96% 50%; }
+@media (max-width: 860px) { .contact .wrap { grid-template-columns: 1fr; } .contact-media { max-width: 24rem; } }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--sand); padding-block: var(--space-lg) var(--space-md); }
+.footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-md); }
+.footer-top img { height: 7rem; width: auto; }
+.footer-love { font-family: var(--font-hand); font-size: 1.7rem; color: var(--rose-ink); }
+.disclaimer { margin-top: var(--space-md); font-size: 0.8rem; line-height: 1.55; color: var(--ink-soft); max-width: 80ch; }
+.copy { margin-top: var(--space-sm); font-size: 0.8rem; color: var(--ink-soft); opacity: 0.8; }
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * { opacity: 0; translate: 0 1.25rem; animation: rise 1s var(--ease-out) forwards; }
+  .hero-copy > *:nth-child(2) { animation-delay: .08s; }
+  .hero-copy > *:nth-child(3) { animation-delay: .16s; }
+  .hero-copy > *:nth-child(4) { animation-delay: .24s; }
+  .hero-copy > *:nth-child(5) { animation-delay: .32s; }
+  .hero-visual { opacity: 0; scale: 0.97; animation: settle 1.4s var(--ease-out) .15s forwards; }
+  .hero-note { opacity: 0; translate: 0 1rem; animation: rise 1s var(--ease-out) .7s forwards; }
+  .js .reveal { opacity: 0; translate: 0 2rem; transition: opacity 1s var(--ease-out), translate 1s var(--ease-out); }
+  .js .reveal.is-in { opacity: 1; translate: 0 0; }
+  .arch img { transition: scale 1.2s var(--ease-out); }
+  .arch:hover img { scale: 1.03; }
+}
+@keyframes rise { to { opacity: 1; translate: 0 0; } }
+@keyframes settle { to { opacity: 1; scale: 1; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.3 1.2-.2 1.6l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5Zm-3.3 3.4-8.6 7.8-.3 3.6-1.7-5.2 10-6.3c.5-.3.9 0 .6.1Z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M5 19c3-7 7-11 14-13-1 7-5 12-12 12.5M5 19l6-6"/></symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Лискаво, на главную">
+      <img src="assets/logo-mark.png" alt="Лискаво" width="1045" height="395">
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#about">О Виктории</a>
+      <a href="#directions">Направления</a>
+      <a href="#schedule">Расписание и цены</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn--primary header-cta" data-tg href="https://t.me/mal_victoria" target="_blank" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-tg"/></svg>
+      <span>Написать<span class="label-long"> в Telegram</span></span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="hero-kicker">о себе с любовью</p>
+        <h1 id="hero-title">Немного замедлиться и вернуться к себе</h1>
+        <p class="hero-lead">Пространство движения, заботы и женского здоровья в Якутске. Узнаём своё тело через движение, дыхание и ощущения.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" data-tg href="https://t.me/mal_victoria" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-tg"/></svg>
+            Написать Виктории
+          </a>
+          <a class="btn btn--ghost" href="#schedule">Расписание и цены</a>
+        </div>
+        <p class="hero-meta"><span>Женское здоровье</span><span>Интимный фитнес</span><span>ул. Лермонтова, 42</span></p>
+      </div>
+      <div class="hero-visual">
+        <div class="arch">
+          <img src="assets/studio-hero.jpg" alt="Зал студии «Лискаво»: шалфейная стена с логотипом, коврики с валиками, вечерний свет и свечи" width="1536" height="1024" fetchpriority="high">
+        </div>
+        <p class="hero-note"><strong>Можно с любого уровня</strong>Без гибкости, спортивной формы и сравнения с другими.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE PROJECT -->
+  <section class="permission" aria-labelledby="perm-title">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 id="perm-title">Тело каждый день проходит с нами через всё</h2>
+        <p class="permission-intro">Усталость, напряжение, перемены, радость, тревоги. Мы заботимся о других, спешим и стараемся всё успеть, а на себя не остаётся ни времени, ни сил.</p>
+        <p class="permission-intro">«Лискаво» не только про физическую активность. Это про отношение к себе и про то, чтобы не откладывать заботу о себе на потом.</p>
+      </div>
+      <ul class="nots reveal" aria-label="Что важно знать перед первым занятием">
+        <li>нужно быть гибкой</li>
+        <li>нужно быть спортивной</li>
+        <li>нужно уметь сложные упражнения</li>
+        <li>нужно сравнивать себя с другими</li>
+        <li class="yes">начинать с того уровня, на котором вы сейчас</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT VIKTORIA -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <figure class="about-photo reveal">
+        <div class="arch">
+          <img src="assets/viktoria.jpg" alt="Виктория, ведущая занятий «Лискаво», сидит на полу у окна с закрытыми глазами" width="736" height="1120" loading="lazy">
+        </div>
+        <figcaption>Виктория, ведущая занятий</figcaption>
+      </figure>
+      <div class="reveal">
+        <p class="eyebrow">Давайте знакомиться</p>
+        <h2 id="about-title">Виктория</h2>
+        <p class="about-since">В медицинской сфере с 2007 года</p>
+        <div class="prose">
+          <p>Мне интересно, как устроено наше тело. Со временем в моей жизни появились йога, движение, дыхание и интерес к тому, как всё это связано с самочувствием.</p>
+          <p>Мне важно не просто показать упражнение и попросить повторить. Хочется разобраться, зачем мы его выполняем, что при этом происходит и какие ощущения стоит замечать.</p>
+          <p>Особенно меня заинтересовало женское здоровье. Этой теме хочется уделять внимание не только когда появляются вопросы или дискомфорт, но и в повседневной жизни.</p>
+          <p>Я продолжаю учиться и не обещаю чудесных результатов. Честно делюсь знаниями и помогаю осваивать движения осознанно. На занятиях можно задавать вопросы, выбирать комфортный темп и не стесняться того, что что-то пока не получается.</p>
+          <p>Хочу, чтобы женщина уходила не с мыслью, что ей срочно нужно себя переделать, а с ощущением, что она сделала что-то хорошее для себя.</p>
+        </div>
+        <blockquote class="pull">Я не за идеальное тело. Я за <em>внимательное отношение</em> к своему телу и к себе.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTIONS -->
+  <section class="directions" id="directions" aria-labelledby="dir-title">
+    <div class="wrap">
+      <div class="directions-head reveal">
+        <h2 id="dir-title">Два направления</h2>
+        <p>Оба помогают лучше узнать своё тело, но отличаются задачами и характером движений. Если сомневаетесь, напишите, вместе подберём подходящее.</p>
+      </div>
+
+      <article class="direction reveal" aria-labelledby="d1">
+        <div class="direction-media">
+          <div class="arch"><img src="assets/studio-hall.jpg" alt="Светлый зал с зеркальной стеной, плетёными светильниками и ковриками" width="1100" height="658" loading="lazy"></div>
+        </div>
+        <div>
+          <p class="direction-num">01 · вторник</p>
+          <h3 id="d1">Женское здоровье</h3>
+          <p class="direction-lead">Не только мышцы тазового дна. Важно, как работает всё тело.</p>
+          <p class="direction-text">Работа с этой областью не сводится к тому, чтобы постоянно напрягать определённые мышцы. Мы учимся чувствовать тело, координировать движения, замечать дыхание и понимать разницу между напряжением и расслаблением.</p>
+          <ul class="leaf-list">
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Дыхание.</b> Замечаем, как оно сопровождает движение, и не задерживаем его без необходимости.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Подвижность.</b> Упражнения для разных отделов тела в комфортном диапазоне.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Осанка и координация.</b> Лучше управляем движением и ощущаем положение тела.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Тазовое дно.</b> Учимся осознанно включать мышцы в работу и, не менее важно, отпускать напряжение.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Телесная осознанность.</b> Выбираем подходящую нагрузку и не выполняем движения через боль.</span></li>
+          </ul>
+          <p class="care-note">Если есть боль, недержание, ощущение тяжести или другие симптомы со стороны тазового дна, важно обратиться к профильному специалисту. Групповые занятия не заменяют диагностику и индивидуальную реабилитацию.</p>
+        </div>
+      </article>
+
+      <article class="direction direction--flip reveal" aria-labelledby="d2">
+        <div class="direction-media">
+          <div class="arch"><img style="object-position: 12% 50%" src="assets/studio-evening.jpg" alt="Вечерний зал при свечах и тёплом свете ламп" width="880" height="616" loading="lazy"></div>
+        </div>
+        <div>
+          <p class="direction-num">02 · среда</p>
+          <h3 id="d2">Интимный фитнес</h3>
+          <p class="direction-lead">Движение, пластика и знакомство с возможностями своего тела.</p>
+          <p class="direction-text">Особое внимание движениям таза, пластике и управлению телом. Осваиваем разные варианты движений, соединяем их и замечаем, как меняются ощущения. В практике есть плавные и волнообразные движения, элементы пластики и фитнес-камасутры.</p>
+          <ul class="leaf-list">
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span>Пластика и подвижность таза</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span>Координация и контроль движений</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span>Плавность и разнообразие двигательных комбинаций</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span>Дыхание и внимание к собственным ощущениям</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span>Новые движения постепенно, без сравнения с другими</span></li>
+          </ul>
+          <p class="direction-quote">Не про то, чтобы кому-то нравиться. Про интерес к собственному телу.</p>
+          <p class="care-note">Интимный фитнес не заменяет медицинскую помощь и не гарантирует изменений либидо, сексуальной функции или решения проблем со здоровьем.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SCHEDULE + PRICES -->
+  <section class="night" id="schedule" aria-labelledby="sch-title">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 id="sch-title">Найдите время для себя</h2>
+        <p class="night-lead">Регулярная практика не про идеальную дисциплину. Это время, которое принадлежит вам.</p>
+      </div>
+
+      <ul class="week reveal" aria-label="Расписание на неделю">
+        <li><span class="day">Пн</span></li>
+        <li class="has"><span class="day">Вт</span><span class="cls">Женское здоровье</span><span class="time">20:00–21:00</span></li>
+        <li class="has"><span class="day">Ср</span><span class="cls">Интимный фитнес</span><span class="time">20:00–21:00</span></li>
+        <li><span class="day">Чт</span></li>
+        <li><span class="day">Пт</span></li>
+        <li class="tbd"><span class="day">Сб</span><span class="cls">Время уточняется</span></li>
+        <li><span class="day">Вс</span></li>
+      </ul>
+      <p class="place reveal">
+        <span>Якутск, ул. Лермонтова, 42</span>
+        <span>Перед первым визитом напишите, чтобы уточнить дату и наличие мест</span>
+      </p>
+
+      <div class="prices reveal">
+        <div>
+          <h3>Стоимость</h3>
+          <p class="prices-intro">Не знаете, какое направление выбрать? Сначала можно просто задать вопрос.</p>
+        </div>
+        <div>
+          <ul class="price-list">
+            <li>
+              <span class="price-name">Разовое посещение</span>
+              <span class="price-value">1 500 ₽</span>
+              <span class="price-desc">Познакомиться с форматом, попробовать практику и понять, подходит ли она вам.</span>
+            </li>
+            <li>
+              <span class="price-name">Абонемент на 8 занятий</span>
+              <span class="price-value">7 000 ₽</span>
+              <span class="price-desc">Для тех, кто хочет заниматься регулярно и постепенно осваивать движения.<small>875 ₽ за занятие</small></span>
+            </li>
+          </ul>
+          <div class="prices-cta">
+            <a class="btn btn--glow" data-tg href="https://t.me/mal_victoria" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-tg"/></svg>
+              Записаться
+            </a>
+            <p>Ответ в Telegram. Подскажу, что взять с собой и с чего начать.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS (примеры для наброска: заменить реальными отзывами до запуска) -->
+  <section class="reviews" aria-labelledby="rev-title">
+    <div class="wrap">
+      <div class="reviews-head reveal">
+        <h2 id="rev-title">Мне важно, как вы себя чувствуете</h2>
+        <p>Удалось ли почувствовать новое движение? Было ли комфортно задавать вопросы и заниматься в своём темпе? Я благодарна каждой участнице, которая делится впечатлениями.</p>
+      </div>
+      <p class="sample-note reveal">Пока это примеры. Скоро здесь появятся настоящие отзывы участниц.</p>
+      <div class="quotes reveal">
+        <figure class="quote">
+          <blockquote>Впервые за долгое время час был только для меня. Ушла спокойной, без ощущения, что «опять не справилась».</blockquote>
+          <figcaption>Анна, ходит на «Женское здоровье»</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>Боялась, что буду самой неуклюжей. Оказалось, никто ни с кем себя не сравнивает, и можно спросить всё, что непонятно.</blockquote>
+          <figcaption>Мария, «Интимный фитнес»</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>Наконец объяснили, зачем каждое упражнение и что я должна чувствовать. Это очень меняет отношение.</blockquote>
+          <figcaption>Светлана, абонемент на 8 занятий</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="faq-aside reveal">
+        <h2 id="faq-title">Частые вопросы</h2>
+        <p>Не нашли свой вопрос? Напишите, я отвечу лично.</p>
+        <a class="btn btn--ghost" data-tg href="https://t.me/mal_victoria" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-tg"/></svg>
+          Задать вопрос
+        </a>
+      </div>
+      <div class="reveal">
+        <div class="faq-group">
+          <h3>О занятиях</h3>
+          <details>
+            <summary>Нужна ли спортивная подготовка?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Нет. Мы ориентируемся на доступный уровень и постепенно осваиваем движения. Важно не повторить всё любой ценой, а учитывать собственные ощущения.</p></div>
+          </details>
+          <details>
+            <summary>Чем отличаются «Женское здоровье» и «Интимный фитнес»?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer">
+              <p><b>Женское здоровье</b>: комплексная работа со всем телом. Дыхание, подвижность, осанка, координация, правильное включение и расслабление мышц тазового дна.</p>
+              <p><b>Интимный фитнес</b>: тренировка, где осваиваем движения таза и работу мышц тазового дна в разных положениях, в том числе приближенных к положениям во время близости с партнёром. Учимся чувствовать тело, управлять движением, вовремя включать и расслаблять нужные мышцы.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Нужно ли уметь правильно дышать?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Нет. Мы будем обращать внимание на дыхание в процессе и постепенно учиться его чувствовать. Специальные техники заранее знать не нужно.</p></div>
+          </details>
+          <details>
+            <summary>Как понять, какое направление выбрать?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Интересна комплексная работа с телом, дыханием и тазовым дном: присмотритесь к «Женскому здоровью». Привлекают пластика, движения таза и координация: к «Интимному фитнесу». Сомневаетесь: напишите мне, обсудим.</p></div>
+          </details>
+          <details>
+            <summary>Подойдут ли занятия, если я давно не занималась?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Да. Можно начинать с того уровня, на котором вы сейчас. Не нужно сравнивать себя с теми, кто занимается давно.</p></div>
+          </details>
+          <details>
+            <summary>Можно ли заниматься, если есть боль или недержание?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Если беспокоят боль, выраженное недержание, ощущение тяжести или другие симптомы, сначала стоит обратиться к врачу или профильному физиотерапевту. Специалист определит причину и подберёт нагрузку. Групповые занятия не заменяют индивидуальную оценку и лечение.</p></div>
+          </details>
+        </div>
+
+        <div class="faq-group">
+          <h3>Беременность и восстановление после родов</h3>
+          <details>
+            <summary>Можно ли заниматься во время беременности?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Во многих случаях да, если беременность протекает без противопоказаний. Вид и интенсивность нагрузки нужно согласовать с врачом, ведущим беременность, особенно при осложнениях или сопутствующих заболеваниях.</p></div>
+          </details>
+          <details>
+            <summary>Когда можно начинать восстанавливаться после родов?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Единого срока нет. Мягкая повседневная активность и полноценные тренировки отличаются. Возвращение к нагрузкам зависит от самочувствия, способа родоразрешения, заживления тканей и возможных осложнений. Индивидуальные рекомендации даст врач.</p></div>
+          </details>
+          <details>
+            <summary>Можно ли заниматься после кесарева сечения?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Возвращение к активности после операции требует учёта заживления и рекомендаций медицинской команды. Сроки и нагрузка индивидуальны; полноценные тренировки без оценки готовности начинать не стоит.</p></div>
+          </details>
+          <details>
+            <summary>Нужно ли обязательно укреплять мышцы тазового дна?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Не всегда достаточно просто укреплять. Важно, чтобы мышцы умели сокращаться, расслабляться и работать согласованно. При боли, повышенном напряжении, недержании или тяжести лучше пройти оценку у профильного специалиста.</p></div>
+          </details>
+          <details>
+            <summary>Можно ли восстановить живот после беременности упражнениями?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Упражнения могут быть частью восстановления, но подход зависит от состояния мышц живота, соединительной ткани, тазового дна и общего самочувствия. Одного комплекса, подходящего всем, не существует.</p></div>
+          </details>
+          <details>
+            <summary>После родов прошло несколько лет. Уже поздно?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Нет. Начать подходящую активность можно и спустя годы. Сначала важно понять, какие задачи есть сейчас, и при наличии симптомов обсудить их со специалистом.</p></div>
+          </details>
+          <details>
+            <summary>Будут ли занятия для беременных и после родов?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Сейчас я обучаюсь и готовлю это направление. Формат, программу и условия расскажу, когда смогу ответственно подойти к организации занятий. Напишите мне, если хотите узнать о запуске первой.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 id="contact-title">Начать можно с простого вопроса</h2>
+        <div class="contact-text">
+          <p>Необязательно сразу знать, какое направление вам подходит. Иногда достаточно спросить, как проходят занятия, что взять с собой и с чего начать.</p>
+          <p>Буду рада познакомиться!</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn--primary" data-tg href="https://t.me/mal_victoria" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-tg"/></svg>
+            Написать в Telegram
+          </a>
+        </div>
+        <p class="contact-address">Якутск, ул. Лермонтова, 42 <a href="https://yandex.ru/maps/?text=%D0%AF%D0%BA%D1%83%D1%82%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9B%D0%B5%D1%80%D0%BC%D0%BE%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%2C%2042" target="_blank" rel="noopener">на карте</a></p>
+      </div>
+      <div class="contact-media reveal">
+        <div class="arch"><img src="assets/studio-entry.jpg" alt="Прихожая студии: скамья, овальное зеркало, на стене надпись «ты важна, ты можешь, ты достойна заботы»" width="900" height="689" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <img src="assets/logo.png" alt="Лискаво: женское здоровье и интимный фитнес" width="1060" height="590" loading="lazy">
+      <p class="footer-love">о себе с любовью ♡</p>
+    </div>
+    <p class="disclaimer">Информация на сайте носит ознакомительный характер и не заменяет консультацию медицинского специалиста, диагностику или лечение. При наличии симптомов, беременности или восстановлении после родов подходящую физическую нагрузку следует согласовать со специалистом.</p>
+    <p class="copy">© 2026 Лискаво · Якутск</p>
+  </div>
+</footer>
+
+<script>
+  // Единственное место, где задаётся Telegram: поменять на реальный адрес, например https://t.me/username
+  const TELEGRAM_URL = "https://t.me/mal_victoria";
+  document.querySelectorAll("[data-tg]").forEach(a => a.href = TELEGRAM_URL);
+
+  document.documentElement.classList.add("js");
+  const header = document.querySelector(".site-header");
+  addEventListener("scroll", () => header.classList.toggle("is-scrolled", scrollY > 8), { passive: true });
+
+  const io = new IntersectionObserver(entries => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
