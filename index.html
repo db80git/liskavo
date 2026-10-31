@@ -121,7 +121,7 @@ p { margin: 0; text-wrap: pretty; }
 .hero-visual { position: relative; }
 .arch { border-radius: var(--radius-arch); overflow: hidden; background: var(--linen-2); }
 .hero-visual .arch { aspect-ratio: 4 / 5; box-shadow: 0 2.5rem 4rem -2.5rem oklch(35% 0.05 70 / 0.45); }
-.hero-visual .arch img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%; }
+.hero-visual .arch img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 40%; }
 .hero-note {
   position: absolute; left: clamp(-3rem, -4vw, -1rem); bottom: 12%;
   background: var(--linen); padding: 1rem 1.25rem; border-radius: 1rem;
@@ -201,6 +201,44 @@ p { margin: 0; text-wrap: pretty; }
   .direction-media { max-width: 26rem; }
 }
 
+/* ---------- maternity (в разработке, онлайн) ---------- */
+.maternity { padding-block: var(--space-xl); }
+.status-pill {
+  display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0.95rem; border-radius: 999px;
+  background: color-mix(in oklch, var(--sage) 50%, var(--linen)); color: oklch(30% 0.04 120); font-size: var(--text-sm); font-weight: 500;
+}
+.status-pill::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--rose-ink); }
+.mat-head { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.mat-head h2 { font-size: var(--text-2xl); margin-top: var(--space-md); }
+.mat-lead { margin-top: var(--space-sm); font-family: var(--font-display); font-size: var(--text-lg); color: var(--olive); }
+.mat-intro { display: grid; gap: 0.9rem; color: var(--ink-soft); max-width: 52ch; padding-top: var(--space-sm); }
+.mat-quote { margin-top: var(--space-xs); font-family: var(--font-hand); font-size: 1.6rem; line-height: 1.3; color: var(--rose-ink); max-width: 30ch; }
+.mat-cols { margin-top: var(--space-xl); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
+.mat-col { padding-top: var(--space-md); border-top: 1px solid var(--sand); }
+.mat-col h3 { font-size: var(--text-xl); }
+.mat-col > p { margin-top: var(--space-sm); color: var(--ink-soft); max-width: 52ch; }
+.mat-col .leaf-list li { color: var(--ink-soft); }
+.mat-col .care-note, .maternity .care-note { background: var(--linen-2); color: var(--ink-soft); }
+.steps { margin-top: var(--space-xl); display: grid; grid-template-columns: 0.8fr 2.2fr; gap: clamp(2rem, 6vw, 6rem); }
+.steps h3 { font-size: var(--text-xl); }
+.steps ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); counter-reset: step; }
+.steps li { counter-increment: step; color: var(--ink-soft); font-size: 0.98rem; }
+.steps li::before { content: counter(step, decimal-leading-zero); display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--rose-ink); margin-bottom: 0.4rem; }
+.steps li b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; line-height: 1.2; color: var(--ink); margin-bottom: 0.35rem; }
+.mat-launch { margin-top: var(--space-xl); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-md); align-items: stretch; }
+.mat-launch .care-note { margin-top: 0; max-width: none; padding: var(--space-md); border-radius: 1.25rem; font-size: 0.95rem; }
+.mat-launch .care-note strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; color: var(--ink); margin-bottom: 0.4rem; }
+.launch { padding: var(--space-md); border-radius: 1.25rem; background: var(--sage); display: grid; gap: 0.9rem; align-content: start; }
+.launch strong { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; line-height: 1.2; }
+.launch p { color: oklch(28% 0.03 118); font-size: 0.95rem; }
+.launch .btn { justify-self: start; }
+.mat-faq { margin-top: var(--space-xl); display: grid; grid-template-columns: 1.1fr 1.9fr; gap: clamp(2rem, 6vw, 6rem); }
+.mat-faq h3 { font-size: var(--text-xl); }
+@media (max-width: 860px) {
+  .mat-head, .mat-cols, .steps, .mat-launch, .mat-faq { grid-template-columns: 1fr; }
+  .steps ol { grid-template-columns: 1fr; }
+}
+
 /* ---------- schedule & prices (night) ---------- */
 .night { background: var(--night); color: var(--on-night); padding-block: var(--space-xl); position: relative; overflow: hidden; }
 .night::before {
@@ -211,21 +249,22 @@ p { margin: 0; text-wrap: pretty; }
 .night h2 { font-size: var(--text-2xl); }
 .night-lead { margin-top: var(--space-md); max-width: 46ch; color: var(--on-night-soft); line-height: 1.7; }
 .week { list-style: none; margin: var(--space-lg) 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); border-top: 1px solid oklch(100% 0 0 / 0.12); }
-.week li { padding: 1rem 0.75rem 1.25rem; border-right: 1px solid oklch(100% 0 0 / 0.08); min-height: 9.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.week li { padding: 1rem 0.75rem 1.25rem; border-right: 1px solid oklch(100% 0 0 / 0.08); min-height: 10rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .week li:last-child { border-right: none; }
 .week .day { font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-night-soft); opacity: 0.6; }
 .week .has { background: var(--night-2); }
 .week .has .day { opacity: 1; color: var(--glow); }
+.week .slots { display: grid; gap: 0.9rem; }
+.week .slot { display: grid; gap: 0.3rem; }
+.week .slot + .slot { padding-top: 0.9rem; border-top: 1px solid oklch(100% 0 0 / 0.1); }
 .week .cls { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.15; }
-.week .time { font-size: var(--text-sm); color: var(--on-night-soft); font-variant-numeric: tabular-nums; margin-top: auto; }
-.week .tbd .cls { font-family: var(--font-body); font-size: var(--text-sm); color: var(--on-night-soft); }
+.week .time { font-size: var(--text-sm); color: var(--on-night-soft); font-variant-numeric: tabular-nums; }
 @media (max-width: 760px) {
   .week { grid-template-columns: 1fr; border-top: none; gap: 0.5rem; }
-  .week li { min-height: 0; border: none; border-radius: 1rem; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 0.25rem 1rem; padding: 1rem 1.2rem; }
-  .week li:not(.has):not(.tbd) { display: none; }
-  .week .day { width: 2.5rem; }
-  .week .time { margin-top: 0; margin-left: auto; }
-  .week .tbd { background: oklch(100% 0 0 / 0.04); }
+  .week li { min-height: 0; border: none; border-radius: 1rem; display: grid; grid-template-columns: 2.5rem 1fr; align-items: baseline; gap: 1rem; padding: 1rem 1.2rem; }
+  .week li:not(.has) { display: none; }
+
+  .week .slot { grid-template-columns: 1fr auto; align-items: baseline; gap: 1rem; }
 }
 .place { margin-top: var(--space-md); display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; font-size: var(--text-sm); color: var(--on-night-soft); }
 .place a { color: var(--glow); text-underline-offset: 3px; }
@@ -250,17 +289,14 @@ p { margin: 0; text-wrap: pretty; }
 .reviews h2 { font-size: var(--text-xl); }
 .reviews-head p { color: var(--ink-soft); max-width: 52ch; }
 .sample-note { display: inline-block; margin-top: var(--space-lg); padding: 0.3rem 0.85rem; border-radius: 999px; border: 1px dashed var(--rose); color: var(--rose-ink); font-size: var(--text-sm); }
-.quotes { margin-top: var(--space-md); display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-md); align-items: start; }
-.quote { margin: 0; padding: var(--space-md); border-radius: 1.25rem; background: var(--linen-2); }
-.quote:nth-child(2) { margin-top: var(--space-lg); background: color-mix(in oklch, var(--sage) 45%, var(--linen)); }
-.quote:nth-child(3) { margin-top: calc(var(--space-lg) * 0.4); }
-.quote blockquote { margin: 0; font-size: 1.02rem; line-height: 1.6; }
-.quote:first-child blockquote { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.3; }
-.quote figcaption { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--ink-soft); }
+.quotes { margin-top: var(--space-md); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); align-items: stretch; }
+.quote { margin: 0; padding: var(--space-md); border-radius: 1.25rem; background: var(--linen-2); display: flex; flex-direction: column; gap: var(--space-md); }
+.quote:nth-child(2) { background: color-mix(in oklch, var(--sage) 45%, var(--linen)); }
+.quote blockquote { margin: 0; font-family: var(--font-display); font-size: 1.3rem; line-height: 1.35; }
+.quote figcaption { margin-top: auto; font-size: var(--text-sm); color: var(--ink-soft); }
 .quote figcaption::before { content: "♡ "; color: var(--rose); }
 @media (max-width: 860px) {
   .reviews-head, .quotes { grid-template-columns: 1fr; }
-  .quote:nth-child(n) { margin-top: 0; }
 }
 
 /* ---------- faq ---------- */
@@ -345,6 +381,7 @@ details[open] summary .plus::after { rotate: 0deg; }
     <nav class="nav" aria-label="Разделы">
       <a href="#about">О Виктории</a>
       <a href="#directions">Направления</a>
+      <a href="#maternity">Беременность</a>
       <a href="#schedule">Расписание и цены</a>
       <a href="#faq">Вопросы</a>
     </nav>
@@ -375,7 +412,7 @@ details[open] summary .plus::after { rotate: 0deg; }
       </div>
       <div class="hero-visual">
         <div class="arch">
-          <img src="assets/studio-hero.jpg" alt="Зал студии «Лискаво»: шалфейная стена с логотипом, коврики с валиками, вечерний свет и свечи" width="1536" height="1024" fetchpriority="high">
+          <img src="assets/vika-explain.jpg" alt="Виктория на коврике в студии объясняет, как дыхание сопровождает движение" width="1264" height="848" fetchpriority="high">
         </div>
         <p class="hero-note"><strong>Можно с любого уровня</strong>Без гибкости, спортивной формы и сравнения с другими.</p>
       </div>
@@ -435,10 +472,10 @@ details[open] summary .plus::after { rotate: 0deg; }
 
       <article class="direction reveal" aria-labelledby="d1">
         <div class="direction-media">
-          <div class="arch"><img src="assets/studio-hall.jpg" alt="Светлый зал с зеркальной стеной, плетёными светильниками и ковриками" width="1100" height="658" loading="lazy"></div>
+          <div class="arch"><img src="assets/vika-breath.jpg" alt="Виктория сидит на коврике с закрытыми глазами, одна рука на груди, другая на животе: дыхательная практика" width="928" height="1152" loading="lazy"></div>
         </div>
         <div>
-          <p class="direction-num">01 · вторник</p>
+          <p class="direction-num">01 · вторник и суббота</p>
           <h3 id="d1">Женское здоровье</h3>
           <p class="direction-lead">Не только мышцы тазового дна. Важно, как работает всё тело.</p>
           <p class="direction-text">Работа с этой областью не сводится к тому, чтобы постоянно напрягать определённые мышцы. Мы учимся чувствовать тело, координировать движения, замечать дыхание и понимать разницу между напряжением и расслаблением.</p>
@@ -455,10 +492,10 @@ details[open] summary .plus::after { rotate: 0deg; }
 
       <article class="direction direction--flip reveal" aria-labelledby="d2">
         <div class="direction-media">
-          <div class="arch"><img style="object-position: 12% 50%" src="assets/studio-evening.jpg" alt="Вечерний зал при свечах и тёплом свете ламп" width="880" height="616" loading="lazy"></div>
+          <div class="arch"><img style="object-position: 50% 25%" src="assets/vika-portrait.jpg" alt="Виктория, спокойный портрет крупным планом у окна" width="928" height="1152" loading="lazy"></div>
         </div>
         <div>
-          <p class="direction-num">02 · среда</p>
+          <p class="direction-num">02 · среда и суббота</p>
           <h3 id="d2">Интимный фитнес</h3>
           <p class="direction-lead">Движение, пластика и знакомство с возможностями своего тела.</p>
           <p class="direction-text">Особое внимание движениям таза, пластике и управлению телом. Осваиваем разные варианты движений, соединяем их и замечаем, как меняются ощущения. В практике есть плавные и волнообразные движения, элементы пластики и фитнес-камасутры.</p>
@@ -476,6 +513,105 @@ details[open] summary .plus::after { rotate: 0deg; }
     </div>
   </section>
 
+  <!-- MATERNITY (направление в разработке, онлайн) -->
+  <section class="maternity" id="maternity" aria-labelledby="mat-title">
+    <div class="wrap">
+      <div class="mat-head reveal">
+        <div>
+          <p class="status-pill">В разработке · видеоуроки онлайн</p>
+          <h2 id="mat-title">Беременность и восстановление после родов</h2>
+          <p class="mat-lead">Бережное движение на важном этапе жизни</p>
+        </div>
+        <div class="mat-intro">
+          <p>Беременность и рождение ребёнка меняют привычную жизнь женщины, и её тело тоже. В этот период особенно важно не требовать от себя невозможного, а учиться слышать свои ощущения и находить способы заботиться о себе.</p>
+          <p>Я развиваю направление, где главное место займут практические занятия: дыхание, мягкие движения, упражнения на координацию и постепенное возвращение к физической активности.</p>
+          <p class="mat-quote">Не про идеальную беременность и не про быстрое возвращение формы. Про бережное отношение к себе.</p>
+        </div>
+      </div>
+
+      <div class="mat-cols reveal">
+        <article class="mat-col" aria-labelledby="mat-preg">
+          <h3 id="mat-preg">Во время беременности</h3>
+          <p>Тело постепенно меняется, а вместе с ним ощущения, привычные движения и распределение нагрузки. Хочется помочь будущим мамам лучше познакомиться со своим телом и освоить практики, которые при отсутствии противопоказаний станут частью заботы о себе.</p>
+          <ul class="leaf-list">
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Дыхательные практики.</b> Замечаем дыхание, не задерживаем его без необходимости и сочетаем с движением.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Мягкие движения для позвоночника и таза.</b> Доступная подвижность с учётом меняющихся ощущений.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Координация.</b> Осваиваем движения постепенно, без рывков и стремления сделать всё идеально.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Мышцы тазового дна.</b> Учимся замечать их работу и разницу между напряжением и расслаблением.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Расслабление.</b> Время замедлиться, снять лишнее напряжение и прислушаться к самочувствию.</span></li>
+          </ul>
+        </article>
+        <article class="mat-col" aria-labelledby="mat-post">
+          <h3 id="mat-post">После родов</h3>
+          <p>Восстановление не соревнование и не проверка силы воли. Телу нужно время, а нагрузку важно увеличивать постепенно, с учётом состояния женщины и особенностей родов.</p>
+          <ul class="leaf-list">
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Дыхание и мягкое движение.</b> Спокойные практики без избыточного напряжения.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Мышцы живота и тазового дна.</b> Не только сокращение, но и расслабление, координация, согласованная работа.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Постепенное возвращение к нагрузке.</b> Начинаем с доступного и усложняем по мере готовности.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Осознанность в повседневных движениях.</b> Замечаем, как тело реагирует на привычную активность.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span><b>Свой темп.</b> Не сравниваем своё восстановление с чужим и не ставим сроков.</span></li>
+          </ul>
+          <p class="care-note">Восстановление после естественных родов и кесарева сечения может отличаться. Значение имеют заживление, возможный диастаз, симптомы со стороны тазового дна и другие особенности, поэтому универсального комплекса для всех не существует.</p>
+        </article>
+      </div>
+
+      <div class="steps reveal">
+        <h3>Как будет проходить обучение</h3>
+        <ol>
+          <li><b>Видеоуроки в закрытой группе</b>Практики можно выполнять в удобное время, не подстраиваясь под расписание.</li>
+          <li><b>Главное: сама практика</b>Показываю движения, объясняю технику и обращаю внимание на важные детали.</li>
+          <li><b>Теории ровно столько, сколько нужно</b>Зачем упражнение, как его выполнять и какие ощущения учитывать.</li>
+        </ol>
+      </div>
+
+      <div class="mat-launch reveal">
+        <p class="care-note"><strong>Важное о безопасности</strong>Практики во время беременности и после родов должны учитывать срок, состояние женщины, особенности родов и ход восстановления. Перед началом занятий нужно получить рекомендации медицинского специалиста, а при противопоказаниях или тревожных симптомах согласовать нагрузку. Материалы не заменяют медицинское наблюдение, диагностику, лечение или индивидуальную реабилитацию.</p>
+        <div class="launch">
+          <strong>Запись пока не открыта</strong>
+          <p>Программа, формат запуска и условия участия будут объявлены после подготовки. Мне важно не обещать быстрых результатов, а создать основу для бережной и последовательной работы с телом.</p>
+          <a class="btn btn--primary" data-tg href="https://t.me/mal_victoria" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-tg"/></svg>
+            Узнать о запуске первой
+          </a>
+        </div>
+      </div>
+
+      <div class="mat-faq reveal">
+        <h3>Вопросы о беременности и восстановлении</h3>
+        <div>
+          <details>
+            <summary>Можно ли заниматься во время беременности?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Во многих случаях да, если беременность протекает без противопоказаний. Вид и интенсивность нагрузки нужно согласовать с врачом, ведущим беременность, особенно при осложнениях или сопутствующих заболеваниях.</p></div>
+          </details>
+          <details>
+            <summary>Когда можно начинать восстанавливаться после родов?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Единого срока нет. Мягкая повседневная активность и полноценные тренировки отличаются. Возвращение к нагрузкам зависит от самочувствия, способа родоразрешения, заживления тканей и возможных осложнений. Индивидуальные рекомендации даст врач.</p></div>
+          </details>
+          <details>
+            <summary>Можно ли заниматься после кесарева сечения?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Возвращение к активности после операции требует учёта заживления и рекомендаций медицинской команды. Сроки и нагрузка индивидуальны; полноценные тренировки без оценки готовности начинать не стоит.</p></div>
+          </details>
+          <details>
+            <summary>Нужно ли обязательно укреплять мышцы тазового дна?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Не всегда достаточно просто укреплять. Важно, чтобы мышцы умели сокращаться, расслабляться и работать согласованно. При боли, повышенном напряжении, недержании или тяжести лучше пройти оценку у профильного специалиста.</p></div>
+          </details>
+          <details>
+            <summary>Можно ли восстановить живот после беременности упражнениями?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Упражнения могут быть частью восстановления, но подход зависит от состояния мышц живота, соединительной ткани, тазового дна и общего самочувствия. Одного комплекса, подходящего всем, не существует.</p></div>
+          </details>
+          <details>
+            <summary>После родов прошло несколько лет. Уже поздно?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Нет. Начать подходящую активность можно и спустя годы. Сначала важно понять, какие задачи есть сейчас, и при наличии симптомов обсудить их со специалистом.</p></div>
+          </details>
+          <details>
+            <summary>Когда откроется запись?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Сейчас я обучаюсь и готовлю программу. Формат, содержание и условия расскажу, когда смогу ответственно подойти к организации занятий. Напишите мне в Telegram, если хотите узнать о запуске первой.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SCHEDULE + PRICES -->
   <section class="night" id="schedule" aria-labelledby="sch-title">
     <div class="wrap">
@@ -486,11 +622,20 @@ details[open] summary .plus::after { rotate: 0deg; }
 
       <ul class="week reveal" aria-label="Расписание на неделю">
         <li><span class="day">Пн</span></li>
-        <li class="has"><span class="day">Вт</span><span class="cls">Женское здоровье</span><span class="time">20:00–21:00</span></li>
-        <li class="has"><span class="day">Ср</span><span class="cls">Интимный фитнес</span><span class="time">20:00–21:00</span></li>
+        <li class="has"><span class="day">Вт</span>
+          <div class="slots"><p class="slot"><span class="cls">Женское здоровье</span><span class="time">20:00–21:30</span></p></div>
+        </li>
+        <li class="has"><span class="day">Ср</span>
+          <div class="slots"><p class="slot"><span class="cls">Интимный фитнес</span><span class="time">20:00–21:30</span></p></div>
+        </li>
         <li><span class="day">Чт</span></li>
         <li><span class="day">Пт</span></li>
-        <li class="tbd"><span class="day">Сб</span><span class="cls">Время уточняется</span></li>
+        <li class="has"><span class="day">Сб</span>
+          <div class="slots">
+            <p class="slot"><span class="cls">Женское здоровье</span><span class="time">09:00–10:30</span></p>
+            <p class="slot"><span class="cls">Интимный фитнес</span><span class="time">13:00–14:30</span></p>
+          </div>
+        </li>
         <li><span class="day">Вс</span></li>
       </ul>
       <p class="place reveal">
@@ -508,12 +653,12 @@ details[open] summary .plus::after { rotate: 0deg; }
             <li>
               <span class="price-name">Разовое посещение</span>
               <span class="price-value">1 500 ₽</span>
-              <span class="price-desc">Познакомиться с форматом, попробовать практику и понять, подходит ли она вам.</span>
+              <span class="price-desc">Познакомиться с форматом, попробовать практику и понять, подходит ли она вам.<small>Занятие длится 1,5 часа</small></span>
             </li>
             <li>
               <span class="price-name">Абонемент на 8 занятий</span>
               <span class="price-value">7 000 ₽</span>
-              <span class="price-desc">Для тех, кто хочет заниматься регулярно и постепенно осваивать движения.<small>875 ₽ за занятие</small></span>
+              <span class="price-desc">Для тех, кто хочет заниматься регулярно и постепенно осваивать движения. Абонемент действует на одно направление: «Женское здоровье» или «Интимный фитнес».<small>875 ₽ за занятие</small></span>
             </li>
           </ul>
           <div class="prices-cta">
@@ -538,7 +683,7 @@ details[open] summary .plus::after { rotate: 0deg; }
       <p class="sample-note reveal">Пока это примеры. Скоро здесь появятся настоящие отзывы участниц.</p>
       <div class="quotes reveal">
         <figure class="quote">
-          <blockquote>Впервые за долгое время час был только для меня. Ушла спокойной, без ощущения, что «опять не справилась».</blockquote>
+          <blockquote>Впервые за долгое время полтора часа были только для меня. Ушла спокойной, без ощущения, что «опять не справилась».</blockquote>
           <figcaption>Анна, ходит на «Женское здоровье»</figcaption>
         </figure>
         <figure class="quote">
@@ -566,7 +711,7 @@ details[open] summary .plus::after { rotate: 0deg; }
       </div>
       <div class="reveal">
         <div class="faq-group">
-          <h3>О занятиях</h3>
+          <h3>О занятиях в зале</h3>
           <details>
             <summary>Нужна ли спортивная подготовка?<span class="plus" aria-hidden="true"></span></summary>
             <div class="answer"><p>Нет. Мы ориентируемся на доступный уровень и постепенно осваиваем движения. Важно не повторить всё любой ценой, а учитывать собственные ощущения.</p></div>
@@ -594,37 +739,9 @@ details[open] summary .plus::after { rotate: 0deg; }
             <summary>Можно ли заниматься, если есть боль или недержание?<span class="plus" aria-hidden="true"></span></summary>
             <div class="answer"><p>Если беспокоят боль, выраженное недержание, ощущение тяжести или другие симптомы, сначала стоит обратиться к врачу или профильному физиотерапевту. Специалист определит причину и подберёт нагрузку. Групповые занятия не заменяют индивидуальную оценку и лечение.</p></div>
           </details>
-        </div>
-
-        <div class="faq-group">
-          <h3>Беременность и восстановление после родов</h3>
           <details>
-            <summary>Можно ли заниматься во время беременности?<span class="plus" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Во многих случаях да, если беременность протекает без противопоказаний. Вид и интенсивность нагрузки нужно согласовать с врачом, ведущим беременность, особенно при осложнениях или сопутствующих заболеваниях.</p></div>
-          </details>
-          <details>
-            <summary>Когда можно начинать восстанавливаться после родов?<span class="plus" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Единого срока нет. Мягкая повседневная активность и полноценные тренировки отличаются. Возвращение к нагрузкам зависит от самочувствия, способа родоразрешения, заживления тканей и возможных осложнений. Индивидуальные рекомендации даст врач.</p></div>
-          </details>
-          <details>
-            <summary>Можно ли заниматься после кесарева сечения?<span class="plus" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Возвращение к активности после операции требует учёта заживления и рекомендаций медицинской команды. Сроки и нагрузка индивидуальны; полноценные тренировки без оценки готовности начинать не стоит.</p></div>
-          </details>
-          <details>
-            <summary>Нужно ли обязательно укреплять мышцы тазового дна?<span class="plus" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Не всегда достаточно просто укреплять. Важно, чтобы мышцы умели сокращаться, расслабляться и работать согласованно. При боли, повышенном напряжении, недержании или тяжести лучше пройти оценку у профильного специалиста.</p></div>
-          </details>
-          <details>
-            <summary>Можно ли восстановить живот после беременности упражнениями?<span class="plus" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Упражнения могут быть частью восстановления, но подход зависит от состояния мышц живота, соединительной ткани, тазового дна и общего самочувствия. Одного комплекса, подходящего всем, не существует.</p></div>
-          </details>
-          <details>
-            <summary>После родов прошло несколько лет. Уже поздно?<span class="plus" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Нет. Начать подходящую активность можно и спустя годы. Сначала важно понять, какие задачи есть сейчас, и при наличии симптомов обсудить их со специалистом.</p></div>
-          </details>
-          <details>
-            <summary>Будут ли занятия для беременных и после родов?<span class="plus" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Сейчас я обучаюсь и готовлю это направление. Формат, программу и условия расскажу, когда смогу ответственно подойти к организации занятий. Напишите мне, если хотите узнать о запуске первой.</p></div>
+            <summary>Есть ли занятия для беременных и после родов?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Это направление сейчас в разработке и будет в формате видеоуроков. Подробности и ответы на частые вопросы собраны в разделе <a href="#maternity">«Беременность и восстановление после родов»</a>.</p></div>
           </details>
         </div>
       </div>
@@ -649,7 +766,7 @@ details[open] summary .plus::after { rotate: 0deg; }
         <p class="contact-address">Якутск, ул. Лермонтова, 42 <a href="https://yandex.ru/maps/?text=%D0%AF%D0%BA%D1%83%D1%82%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9B%D0%B5%D1%80%D0%BC%D0%BE%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%2C%2042" target="_blank" rel="noopener">на карте</a></p>
       </div>
       <div class="contact-media reveal">
-        <div class="arch"><img src="assets/studio-real.jpg" alt="Зал на Лермонтова, 42, где проходят занятия: деревянный пол, коврики и мячи, вечерний свет" width="704" height="1176" loading="lazy"></div>
+        <div class="arch"><img src="assets/studio-real-graded.jpg" alt="Зал на Лермонтова, 42, где проходят занятия: деревянный пол, коврики и мячи, вечерний свет" width="896" height="1200" loading="lazy"></div>
       </div>
     </div>
   </section>
